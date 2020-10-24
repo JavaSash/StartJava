@@ -1,39 +1,30 @@
+
 public class ConditionalStatement {
-
-    public static void main(String[] args){
-
+    public static void main(String[] args) {
         int age = 30;
-        char sex = 9793; //Используем символ копьё Марса
+        if(age > 20){
+            System.out.println("Person over 20 years of age");
+        }
+        char sex = 'M';
+        if(sex == 'M'){
+            System.out.println("Male person");
+        }
+        if(sex != 'M'){
+            System.out.println("Female person");
+        }
         double height = 1.5;
-        char firstLetterOfTheName = 'M';
-
-        if(age>20){
-        System.out.println("Person over 20 years of age");
-        }
-
-        if(sex==9793){
-        System.out.println("Male person");
-        }
-
-        if(sex!=9793){
-        System.out.println("Female person");
-        }
-
         if(height < 1.80){
-        System.out.println("Person below 1.80 m");
+            System.out.println("Person below 1.80 m");
+        } else {
+            System.out.println("The person above 1.80 m");
         }
-        else {
-        System.out.println("The person above 1.80 m");
-        }
-
-        if(firstLetterOfTheName == 'M'){
-        System.out.println("First letter of the name \"M\"");
-        }
-        else if (firstLetterOfTheName == 'I'){
-        System.out.println("First letter of the name \"I\"");
-        }
-        else {
-        System.out.println("First letter of the name is not \"M\" or \"I\"");
+        char firstLetterOfName = 'M';
+        if(firstLetterOfName == 'M'){
+            System.out.println("First letter of the name \"M\"");
+        } else if (firstLetterOfName == 'I'){
+            System.out.println("First letter of the name \"I\"");
+        } else {
+            System.out.println("First letter of the name is not \"M\" or \"I\"");
         }
     }
 }
