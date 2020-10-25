@@ -8,6 +8,7 @@ public class Variable {
         double performanceIndex = 4.8;
         char windows = 8;
         boolean notebook = true;
+
         System.out.println("Brief information about computer of JavaSash:");
         System.out.println("Notebook: " + notebook);
         System.out.println("RAM memory: " + ram + " Gb");
