@@ -25,7 +25,7 @@ public class Calculator {
             int degree = 1;
             result = a;
             while(degree < b) {
-                result = result * a;
+                result *= a;
                 degree++;
             }
             System.out.println("Результат возведения \"a\" в степень \"b\" " + result);
