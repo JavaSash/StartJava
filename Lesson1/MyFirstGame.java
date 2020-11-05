@@ -11,8 +11,6 @@ public class MyFirstGame {
                 number++;
             }
         } while(number != compNumb);
-        if(number == compNumb) {
-            System.out.println("Вы угадали! компьютер загадал число " + number);
-        }
+        System.out.println("Вы угадали! компьютер загадал число " + number);
     }
 }
