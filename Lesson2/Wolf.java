@@ -8,6 +8,7 @@ public class Wolf {
     public String getSex() {
         return sex;
     }
+
     public void setSex(String sex) {
         this.sex = sex;
     }
@@ -15,6 +16,7 @@ public class Wolf {
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -22,6 +24,7 @@ public class Wolf {
     public double getWeight() {
         return weight;
     }
+
     public void setWeight(double weight) {
         this.weight = weight;
     }
@@ -29,6 +32,7 @@ public class Wolf {
     public int getAge() {
         return age;
     }
+
     public void setAge(int age) {
         if(age > 8) {
             System.out.println("Некорректный возраст");
@@ -39,13 +43,14 @@ public class Wolf {
     public String getColor() {
         return color;
     }
+
     public void setColor(String color) {
         this.color = color;
     }
 
     public void go(int speed) {
         if(speed > 0 && speed < 4) {
-        System.out.println("Волк идёт со скоростью " + speed + " км/ч");
+            System.out.println("Волк идёт со скоростью " + speed + " км/ч");
         }
     }
 
@@ -55,7 +60,7 @@ public class Wolf {
 
     public void run(int speed) {
         if(speed > 3) {
-        System.out.println("Волк бежит со скоростью " + speed + " км/ч");
+            System.out.println("Волк бежит со скоростью " + speed + " км/ч");
         }
     }
 
