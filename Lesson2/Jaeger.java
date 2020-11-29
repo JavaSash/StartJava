@@ -6,46 +6,13 @@ public class Jaeger {
     private int speed;
     private int armor;
 
-    public void setModelName(String modelName) {
+    public Jaeger(String modelName, String mark, double height, double weight, int speed, int armor) {
         this.modelName = modelName;
-    }
-    public String getModelName() {
-        return modelName;
-    }
-
-    public void setMark(String mark) {
         this.mark = mark;
-    }
-    public String getMark() {
-        return mark;
-    }
-
-    public void setHeight(double height) {
         this.height = height;
-    }
-    public double getHeight() {
-        return height;
-    }
-
-    public void setWeight(double weight) {
         this.weight = weight;
-    }
-    public double getWeight() {
-        return weight;
-    }
-
-    public void setSpeed(int speed) {
         this.speed = speed;
-    }
-    public int getSpeed() {
-        return speed;
-    }
-
-    public void setArmor(int armor) {
-        this.armor = armor;
-    }
-    public int getArmor() {
-        return armor;
+        this. armor = armor;
     }
 
     boolean drift() {
@@ -66,12 +33,8 @@ public class Jaeger {
         System.out.println("Tra-ta-ta-ta-ta \n");
     }
 
-    void printParametres () {
-        System.out.println("\n ModelName: " + modelName);
-        System.out.println("Mark: " + mark);
-        System.out.println("Height: " + height + "metres");
-        System.out.println("Weight: " + weight + " tons");
-        System.out.println("Speed: " + speed);
-        System.out.println("Armor: " + armor + "\n");
+    @Override
+    public String toString() {
+        return "\n ModelName: " + modelName + "\n Mark: " + mark + "\n Height: " + height + "metres" + "\n Weight: " + weight + " tons" + "\n Speed: " + speed + "\n Armor: " + armor + "\n";
     }
 }
