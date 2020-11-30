@@ -6,11 +6,11 @@ public class JaegerTest {
         jaeger1.drift();
         jaeger1.move(7);
         jaeger1.scanKaiju();
-        System.out.println(jaeger1.toString());
+        System.out.println(jaeger1);
 
         jaeger2.drift();
         jaeger2.move(10);
         jaeger2.attack();
-        System.out.println(jaeger2.toString());
+        System.out.println(jaeger2);
     }
 }
