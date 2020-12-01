@@ -48,7 +48,6 @@ public class Calculator {
             default:
                 System.out.println("Нет такой математической операции.");
         }
-        System.out.println(result);
         return result;
     }
 }
