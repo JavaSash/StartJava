@@ -46,7 +46,7 @@ public class Calculator {
                 }
                 break;
             default:
-                System.out.println("Нет такой математической операции.");
+                System.out.println("Нет такой математической операции. Попробуйте ещё раз");
         }
         return result;
     }

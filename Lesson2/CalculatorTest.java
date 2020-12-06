@@ -5,56 +5,51 @@ public class CalculatorTest {
         String answer;
         Calculator calc = new Calculator();
         Scanner scan = new Scanner(System.in);
-        int numb1;
-        int numb2;
-        char mathOperation;
-        boolean checkInt;
 
         do {
-            do {
-                System.out.println("Введите первое число");
-                checkInt = scan.hasNextInt();
-                if(checkInt) {
-                    calc.setNumb1(scan.nextInt());
-                } else {
-                    scan.nextLine();
-                }
-            } while(!checkInt);
+            calc.setNumb1(enterNumber());
 
             System.out.println("Введите математическую операцию");
-            scan.nextLine();
             calc.setMathOperation(scan.next().charAt(0));
-            scan.nextLine();
 
-            do {
-                System.out.println("Введите второе число");
-                checkInt = scan.hasNextInt();
-                if(checkInt) {
-                    calc.setNumb2(scan.nextInt());
-                } else {
-                    scan.nextLine();
-                }
-            } while(!checkInt);
+            calc.setNumb2(enterNumber());
 
             System.out.println(calc.calculate());
+            scan.nextLine();
 
             System.out.println("Вы хотите продолжить? [y/n]");
-            scan.nextLine();
             answer = scan.nextLine();
 
-            while(answer != "y" && answer != "n") {
-                switch(answer) {
-                    case "y":
-                        answer = "y";
-                        break;
-                    case "n":
-                        answer = "n";
-                        break;
-                    default:
-                        System.out.println("Введите [y/n]");
-                        answer = scan.nextLine();
+            yesNoCycle: {
+                while(answer != "y" && answer != "n") {
+                    switch(answer) {
+                        case "y":
+                            break yesNoCycle;
+                        case "n":
+                            break yesNoCycle;
+                        default:
+                            System.out.println("Введите [y/n]");
+                            answer = scan.nextLine();
+                    }
                 }
             }
         } while(answer.equalsIgnoreCase("y"));
+    }
+
+    public static int enterNumber() {
+        Scanner scan = new Scanner(System.in);
+        boolean checkInt;
+        int number = 0;
+        do {
+            System.out.println("Введите число");
+            checkInt = scan.hasNextInt();
+            if(checkInt) {
+                number = scan.nextInt();
+            } else {
+                System.out.println("Вы ввели не число\n");
+            }
+            scan.nextLine();
+        } while(!checkInt);
+        return number;
     }
 }
