@@ -20,17 +20,17 @@ public class CalculatorTest {
             System.out.println("Вы хотите продолжить? [y/n]");
             answer = scan.nextLine();
 
-            yesNoCycle: {
-                while(answer != "y" && answer != "n") {
-                    switch(answer) {
-                        case "y":
-                            break yesNoCycle;
-                        case "n":
-                            break yesNoCycle;
-                        default:
-                            System.out.println("Введите [y/n]");
-                            answer = scan.nextLine();
-                    }
+            while(answer != "y" && answer != "n") {
+                switch(answer) {
+                    case "y":
+                        answer = "y";
+                        break;
+                    case "n":
+                        answer = "n";
+                        break;
+                    default:
+                        System.out.println("Введите [y/n]");
+                        answer = scan.nextLine();
                 }
             }
         } while(answer.equalsIgnoreCase("y"));
