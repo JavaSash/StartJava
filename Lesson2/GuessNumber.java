@@ -1,49 +1,56 @@
-/*Модифицируйте программу Угадай число:
-
-реализуйте класс GuessNumber, Player и GuessNumberTest
-
-создайте двух игроков, которые по очереди будут пытаться угадать число (вводя его с клавиатуры), загаданное компьютером
-
-имена игроков вводите с клавиатуры перед запуском игры
-
-поля объектов (Игроков, Игры) инициализируйте с помощью конструкторов
-
-
-одержать победу может только один игрок
-
-Назначение классов в игре Угадай число:
-
-GuessNumber — отвечает за весь игровой процесс
-
-Player — описывает игроков (один экземпляр класса соответствует одному игроку)
-
-GuessNumberTest — отвечает за создание объектов, их инициализацию, запуск игры. Содержит метод main
-
-Для завершения или продолжения работы программы Угадай число выводите сообщение:
-"Хотите продолжить? [да/нет]:". Если пользователь ввел ни "да" ни "нет", а что-то другое — снова выведите сообщение `
-"Хотите продолжить? [да/нет]:". (Реализуйте эту логику в Test-классах)
-*/
 import java.util.Random;
+import java.util.Scanner;
 
 public class GuessNumber {
-    Random random = new Random();
-    private int compNumb = random.nextInt(100)+1;
-    private int number;
+    static int number;
 
+    public static int enterNumber(String name) {
+        Scanner scan = new Scanner(System.in);
+        boolean checkInt;
+        do {
+            System.out.println(name + " введите число");
+            checkInt = scan.hasNextInt();
+            if(checkInt) {
+                number = scan.nextInt();
+            } else {
+                System.out.println("Вы ввели не число\n");
+            }
+            scan.nextLine();
+        } while(!checkInt);
+        return number;
+    }
 
+    public void startGame(String name1, String name2) {
+        Random random = new Random();
+        int compNumb = random.nextInt(100)+1;
 
-    public boolean startGame(String name, int number) {
         boolean win = false;
-        if(number == compNumb) {
-            System.out.println(name + ", вы угадали, поздравляем!");
-            win = true;
-        } else if(number > compNumb) {
-            System.out.println(name + ", введенное вами число " + number + " больше того, что загадал компьютер");
-            win = false;
-        } else if(number < compNumb) {
-            System.out.println(name + ", введенное вами число " + number + " меньше того, что загадал компьютер");
-            win = false;
-        }
-        return win;
+
+        do{
+            enterNumber(name1);
+            if(number == compNumb) {
+                System.out.println(name1 + ", вы угадали, поздравляем!");
+                win = true;
+                continue;
+            } else if(number > compNumb) {
+                System.out.println(name1 + ", введенное вами число " + number + " больше того, что загадал компьютер");
+                //win = false;
+            } else if(number < compNumb) {
+                System.out.println(name1 + ", введенное вами число " + number + " меньше того, что загадал компьютер");
+                //win = false;
+            }
+
+            enterNumber(name2);
+            if(number == compNumb) {
+                System.out.println(name2 + ", вы угадали, поздравляем!");
+                win = true;
+            } else if(number > compNumb) {
+                System.out.println(name2 + ", введенное вами число " + number + " больше того, что загадал компьютер");
+                //win = false;
+            } else if(number < compNumb) {
+                System.out.println(name2 + ", введенное вами число " + number + " меньше того, что загадал компьютер");
+                //win = false;
+            }
+        } while(win == false);
     }
 }
