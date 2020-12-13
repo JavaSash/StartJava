@@ -18,17 +18,17 @@ public class GuessNumberTest {
             Player player2 = new Player(scan.nextLine());
 
             GuessNumber game = new GuessNumber(player1, player2);
-            game.startGame();
+            game.start();
 
             System.out.println("Вы хотите продолжить? [y/n]");
             answer = scan.nextLine();
 
             while(!answer.equalsIgnoreCase("y") && !answer.equalsIgnoreCase("n")) {
                 switch(answer) {
-                    case "y":
+                    /*case "y":
                         break;
                     case "n":
-                        break;
+                        break;*/
                     default:
                         System.out.println("Введите [y/n]");
                         answer = scan.nextLine();
@@ -36,5 +36,4 @@ public class GuessNumberTest {
             }
         } while(answer.equalsIgnoreCase("y"));
     }
-
 }
