@@ -22,10 +22,6 @@ public class CalculatorTest {
 
             while(!answer.equalsIgnoreCase("y") && !answer.equalsIgnoreCase("n")) {
                 switch(answer) {
-                    case "y":
-                        break;
-                    case "n":
-                        break;
                     default:
                         System.out.println("Введите [y/n]");
                         answer = scan.nextLine();
