@@ -14,33 +14,25 @@ public class GuessNumber {
         Random random = new Random();
         int compNumb = random.nextInt(100) + 1;
 
-        //boolean win = false;
-
         do {
             enterNumber(player1);
             if(player1.getNumber() == compNumb) {
                 System.out.println(player1.getName() + ", вы угадали, поздравляем!");
-                //win = true;
                 break;
             } else if(player1.getNumber() > compNumb) {
                 System.out.println(player1.getName() + ", введенное вами число " + player1.getNumber() + " больше того, что загадал компьютер");
-                //win = false;
             } else if(player1.getNumber() < compNumb) {
                 System.out.println(player1.getName() + ", введенное вами число " + player1.getNumber() + " меньше того, что загадал компьютер");
-                //win = false;
             }
 
             enterNumber(player2);
             if(player2.getNumber() == compNumb) {
                 System.out.println(player2.getName() + ", вы угадали, поздравляем!");
-                //win = true;
                 break;
             } else if(player2.getNumber() > compNumb) {
                 System.out.println(player2.getName() + ", введенное вами число " + player2.getNumber() + " больше того, что загадал компьютер");
-                //win = false;
             } else if(player2.getNumber() < compNumb) {
                 System.out.println(player2.getName() + ", введенное вами число " + player2.getNumber() + " меньше того, что загадал компьютер");
-                //win = false;
             }
         } while(true);
     }
