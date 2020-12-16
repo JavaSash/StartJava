@@ -24,11 +24,8 @@ public class GuessNumberTest {
             answer = scan.nextLine();
 
             while(!answer.equalsIgnoreCase("y") && !answer.equalsIgnoreCase("n")) {
-                switch(answer) {
-                    default:
-                        System.out.println("Введите [y/n]");
-                        answer = scan.nextLine();
-                }
+                System.out.println("Введите [y/n]");
+                answer = scan.nextLine();
             }
         } while(answer.equalsIgnoreCase("y"));
     }
