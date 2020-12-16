@@ -1,3 +1,5 @@
+package com.startjava.Lesson1.Cycle;
+
 public class Cycle {
     public static void main(String[] args) {
         System.out.println("Последовательность числел от 0 до 20:");
