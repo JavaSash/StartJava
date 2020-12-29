@@ -1,4 +1,4 @@
-package com.startjava.Lesson2_3.calculator.Calculator;
+package com.startjava.lesson2_3_4.calculator;
 
 public class Calculator {
     private int numb1;
@@ -40,12 +40,7 @@ public class Calculator {
                 result = numb1 % numb2;
                 break;
             case '^':
-                int degree = 1;
-                result = numb1;
-                while(degree < numb2) {
-                    result *= numb1;
-                    degree++;
-                }
+                result = (int) Math.pow(numb1, numb2);
                 break;
             default:
                 System.out.println("Нет такой математической операции. Попробуйте ещё раз");

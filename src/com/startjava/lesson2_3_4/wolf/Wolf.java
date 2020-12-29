@@ -1,4 +1,4 @@
-package com.startjava.Lesson2_3.wolf.Wolf;
+package com.startjava.lesson2_3_4.wolf;
 
 public class Wolf {
     private String sex;

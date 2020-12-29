@@ -1,4 +1,4 @@
-package com.startjava.Lesson2_3.robot.Jaeger;
+package com.startjava.lesson2_3_4.robot;
 
 public class Jaeger {
     private String modelName;

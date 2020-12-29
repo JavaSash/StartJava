@@ -1,4 +1,4 @@
-package com.startjava.Lesson2_3.Person;
+package com.startjava.lesson2_3_4;
 
 public class Person {
     String name = "Grisha";
@@ -7,7 +7,7 @@ public class Person {
     double weight = 70.4;
     int age = 37;
 
-    public go(int speed) {
+    public int go(int speed) {
         if(speed > 0 && speed < 7) {
             System.out.println(name + " идёт со скоростью " + speed + " км/ч.");
         }
@@ -18,7 +18,7 @@ public class Person {
         System.out.println(name + " сидит.");
     }
 
-    public run(int speed) {
+    public int run(int speed) {
         if(speed > 6) {
             System.out.println(name + " бежит со скоростью " + speed + " км/ч.");
         }
