@@ -4,4 +4,7 @@ Test
 *.ini
 *.pdf
 *.tmp
+*.iml
+*.xml
 tree.exe
+.idea

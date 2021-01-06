@@ -14,10 +14,10 @@ public class GuessNumberTest {
             System.out.println("На угадывание у вас есть по 10 попыток.");
             System.out.println("Для начала введите свои имена.\n");
 
-            System.out.println("Игрок 1, представься: ");
+            System.out.print("Игрок 1, представься: ");
             Player player1 = new Player(scan.nextLine());
 
-            System.out.println("Игрок 2, представься: ");
+            System.out.print("Игрок 2, представься: ");
             Player player2 = new Player(scan.nextLine());
 
             GuessNumber game = new GuessNumber(player1, player2);
@@ -26,10 +26,10 @@ public class GuessNumberTest {
             System.out.println("Вы хотите продолжить? [y/n]");
             answer = scan.nextLine();
 
-            while(!answer.equalsIgnoreCase("y") && !answer.equalsIgnoreCase("n")) {
+            while (!answer.equalsIgnoreCase("y") && !answer.equalsIgnoreCase("n")) {
                 System.out.println("Введите [y/n]");
                 answer = scan.nextLine();
             }
-        } while(answer.equalsIgnoreCase("y"));
+        } while (answer.equalsIgnoreCase("y"));
     }
 }
