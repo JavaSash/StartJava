@@ -5,23 +5,16 @@ import java.util.Scanner;
 public class CalculatorTest {
     public static void main(String[] args) {
         String answer;
-        Calculator calc = new Calculator();
-        Scanner scan = new Scanner(System.in);
-        String expression;
-        String[] exprArray;
-
         do {
+            Calculator calc = new Calculator();
+            Scanner scan = new Scanner(System.in);
+
             System.out.print("Введите математическое выражение через пробел: ");
-            expression = scan.nextLine();
-            exprArray = expression.split(" ");
+            String expression = scan.nextLine();
 
-            calc.setNumb1(Integer.parseInt(exprArray[0]));
-
-            calc.setMathOperation(exprArray[1].charAt(0));
-
-            calc.setNumb2(Integer.parseInt(exprArray[2]));
-
-            System.out.println(calc.calculate());
+            if(calc.calculate(expression) != null){
+                System.out.println(calc.calculate(expression));
+            }
 
             System.out.println("Вы хотите продолжить? [y/n]");
             answer = scan.nextLine();

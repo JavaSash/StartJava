@@ -3,48 +3,36 @@ package com.startjava.lesson2_3_4.calculator;
 public class Calculator {
     private int numb1;
     private int numb2;
-    private int result;
     private char mathOperation;
 
-    public void setNumb1(int numb1) {
-        this.numb1 = numb1;
-    }
+    public Integer calculate(String expression) {
+        String[] exprArray;
+        exprArray = expression.split(" ");
+        numb1 = Integer.parseInt(exprArray[0]);
+        mathOperation = exprArray[1].charAt(0);
+        numb2 = Integer.parseInt(exprArray[2]);
 
-    public void setMathOperation(char mathOperation) {
-        this.mathOperation = mathOperation;
-    }
-
-    public void setNumb2(int numb2) {
-        this.numb2 = numb2;
-    }
-
-    public int calculate() {
         switch(mathOperation) {
             case '+':
-                result = numb1 + numb2;
-                break;
+                return numb1 + numb2;
             case '-':
-                result = numb1 - numb2;
-                break;
+                return numb1 - numb2;
             case '*':
-                result = numb1 * numb2;
-                break;
+                return numb1 * numb2;
             case '/':
                 if(numb2 != 0) {
-                    result = numb1 / numb2;
+                    return numb1 / numb2;
                 } else {
                     System.out.println("На ноль делить нельзя");
+                    return null;
                 }
-                break;
             case '%':
-                result = numb1 % numb2;
-                break;
+                return numb1 % numb2;
             case '^':
-                result = (int) Math.pow(numb1, numb2);
-                break;
+                return (int) Math.pow(numb1, numb2);
             default:
                 System.out.println("Нет такой математической операции. Попробуйте ещё раз");
+                return null;
         }
-        return result;
     }
 }
