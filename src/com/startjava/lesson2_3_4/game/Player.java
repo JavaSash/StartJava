@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 public class Player {
     private String name;
-    private int number;
     private int count;
     private int[] attempts = new int[10];
+    int[] realAttempts;
 
     public Player(String name) {
         this.name = name;
@@ -16,12 +16,12 @@ public class Player {
         return name;
     }
 
-    public int getAttempts(int count) {
+    public int getAttempt() {
         return attempts[count];
     }
 
-    public void setAttempts(int count, int number) {
-        this.attempts[count] = number;
+    public void setAttempt(int number) {
+        attempts[count] = number;
     }
 
     public int getCount() {
@@ -32,7 +32,7 @@ public class Player {
         this.count = count;
     }
 
-    public String printArray() {
+    public int[] getRealAttempts() {
         int dimension = 0;
         for (count = 0; count < attempts.length; count++) {
             if (attempts[count] == 0) {
@@ -42,12 +42,12 @@ public class Player {
                 dimension = attempts.length;
             }
         }
-        int[] realAttempts = Arrays.copyOfRange(attempts, 0, dimension);
-        String print = Arrays.toString(realAttempts);
-        return print;
+        realAttempts = Arrays.copyOfRange(attempts, 0, dimension);
+        return realAttempts;
     }
 
-    public void nullArray() {
-        Arrays.fill(attempts, 0);
+    public void zeroingArray() {
+        Arrays.fill(realAttempts, 0);
+        attempts = Arrays.copyOf(realAttempts, 10);
     }
 }
