@@ -6,7 +6,6 @@ public class Player {
     private String name;
     private int count;
     private int[] attempts = new int[10];
-    int[] realAttempts;
 
     public Player(String name) {
         this.name = name;
@@ -32,22 +31,16 @@ public class Player {
         this.count = count;
     }
 
-    public int[] getRealAttempts() {
-        int dimension = 0;
-        for (count = 0; count < attempts.length; count++) {
-            if (attempts[count] == 0) {
-                dimension = count;
-                break;
-            } else {
-                dimension = attempts.length;
-            }
+    public String printArray() {
+        int i;
+        String s = "[ ";
+        for (i = 0; i <= count - 1; i++) {
+            s = s + attempts[i] + " ";
         }
-        realAttempts = Arrays.copyOfRange(attempts, 0, dimension);
-        return realAttempts;
+        return s + "]";
     }
 
     public void zeroingArray() {
-        Arrays.fill(realAttempts, 0);
-        attempts = Arrays.copyOf(realAttempts, 10);
+        Arrays.fill(attempts, 0, count, 0);
     }
 }
