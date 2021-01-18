@@ -19,6 +19,10 @@ public class Player {
         return attempts[count];
     }
 
+    public int getAttempt(int i) {
+        return attempts[i];
+    }
+
     public void setAttempt(int number) {
         attempts[count] = number;
     }
@@ -31,16 +35,7 @@ public class Player {
         this.count = count;
     }
 
-    public String printArray() {
-        int i;
-        String s = "[ ";
-        for (i = 0; i <= count - 1; i++) {
-            s = s + attempts[i] + " ";
-        }
-        return s + "]";
-    }
-
-    public void zeroingArray() {
+    public void zeroing() {
         Arrays.fill(attempts, 0, count, 0);
     }
 }
