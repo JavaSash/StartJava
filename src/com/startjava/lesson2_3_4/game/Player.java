@@ -16,11 +16,11 @@ public class Player {
     }
 
     public int getAttempt() {
-        return attempts[count];
+        return attempts[count - 1];
     }
 
-    public int getAttempt(int i) {
-        return attempts[i];
+    public int[] getAttempts() {
+        return attempts;
     }
 
     public void setAttempt(int number) {
