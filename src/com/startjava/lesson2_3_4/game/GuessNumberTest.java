@@ -9,7 +9,7 @@ public class GuessNumberTest {
 
         do {
             System.out.println("\nПриветсвую тебя в игре \"Угадай число\"! \n");
-            System.out.print("Игра рассчитана на двух игроков.");
+            System.out.println("Игра рассчитана на двух игроков.");
             System.out.println("Компьютер загадывает число, а вы должны его угадать.");
             System.out.println("На угадывание у вас есть по 10 попыток.");
             System.out.println("Для начала введите свои имена.\n");

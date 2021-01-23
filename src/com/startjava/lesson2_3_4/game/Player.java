@@ -20,22 +20,15 @@ public class Player {
     }
 
     public int[] getAttempts() {
-        return attempts;
+        return Arrays.copyOf(attempts, count);
     }
 
     public void setAttempt(int number) {
         attempts[count] = number;
+        count++;
     }
 
     public int getCount() {
         return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
-    }
-
-    public void zeroing() {
-        Arrays.fill(attempts, 0, count, 0);
     }
 }
