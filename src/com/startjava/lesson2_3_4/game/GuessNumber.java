@@ -7,8 +7,7 @@ public class GuessNumber {
     private Player player1;
     private Player player2;
     Random random = new Random();
-    int randomNumber;
-
+    private int randomNumber;
 
     public GuessNumber(Player player1, Player player2) {
         this.player1 = player1;
@@ -17,7 +16,6 @@ public class GuessNumber {
     }
 
     public void start() {
-
         do {
             if (makeMove(player1)) {
                 break;
@@ -26,7 +24,6 @@ public class GuessNumber {
             if (makeMove(player2)) {
                 break;
             }
-
         } while (!limitAttempts(player2));
 
         printAttempts(player1);
@@ -71,11 +68,8 @@ public class GuessNumber {
 
     private void printAttempts(Player player) {
         System.out.print(player.getName() + " предполагал, что компьютер загадал одно из чисел: [");
-        for (int numb : player.getAttempts()) {
-            if (numb == 0) {
-                break;
-            }
-            System.out.print(" " + numb);
+        for (int number : player.getAttempts()) {
+            System.out.print(" " + number);
         }
         System.out.print(" ]\n");
     }
